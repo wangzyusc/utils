@@ -1,4 +1,4 @@
-#include "../src/sort.h"
+#include "../src/sort.hpp"
 #include "../src/io.hpp"
 
 using namespace std;

@@ -44,7 +44,7 @@ vector<T> readVector(void){
 template<>
 vector<pair<int, int> > readVector<pair<int, int> >(void){
     cout << "Please enter pair values in form of \"1 2\", line by line:" << endl;
-    vector<pair<int,int>> result;
+    vector<pair<int,int> > result;
     string line;
     string temp;
     int first, second;
@@ -63,7 +63,7 @@ vector<pair<int, int> > readVector<pair<int, int> >(void){
 template<>
 vector<pair<string, string> > readVector<pair<string, string> >(void){
     cout << "Please enter pair strings in form of \"a b\", line by line:" << endl;
-    vector<pair<string, string>> result;
+    vector<pair<string, string> > result;
     string line;
     string temp;
     string first, second;
