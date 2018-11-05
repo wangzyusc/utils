@@ -35,3 +35,40 @@ void _merge_sort_helper(vector<int>& input, int left, int right){
 		input[i++] = temp[index++];
 	}
 }
+
+void quicksort(vector<int>& input){
+	_quicksort(input, 0, input.size()-1);
+}
+
+void _quicksort(vector<int>& input, int left, int right){
+	//
+	if(left >= right) return;
+	auto pivot = partition(input, left, right);
+	_quicksort(input, left, pivot-1);
+	_quicksort(input, pivot+1, right);
+}
+
+int partition(vector<int>& input, int left, int right) {
+	//
+	int i = left - 1;
+	int pivot = input[right];
+	for(int k = left; k < right; k++){
+		if(input[k] < pivot){
+			swap(input[k], input[++i]);
+		}
+	}
+	swap(input[right], input[++i]);
+	return i;
+}
+
+void insertsort(vector<int>& input){
+	cout << "Not implemented yet" << endl;
+}
+
+void heapsort(vector<int>& input){
+	cout << "Not implemented yet" << endl;
+}
+
+void bubblesort(vector<int>& input){
+	cout << "Not implemented yet" << endl;
+}
