@@ -1,4 +1,4 @@
-#include "./sort.hpp"
+#include "../header/sort.hpp"
 
 using namespace std;
 
@@ -62,7 +62,15 @@ int partition(vector<int>& input, int left, int right) {
 }
 
 void insertsort(vector<int>& input){
-	cout << "Not implemented yet" << endl;
+	//cout << "Not implemented yet" << endl;
+	for(int i = 1; i < input.size(); i++){
+		int cur = input[i], j = i;
+		for(; j > 0; j--){
+			if(cur >= input[j-1]) break;
+			input[j] = input[j-1];
+		}
+		input[j] = cur;
+	}
 }
 
 void heapsort(vector<int>& input){
@@ -70,5 +78,12 @@ void heapsort(vector<int>& input){
 }
 
 void bubblesort(vector<int>& input){
-	cout << "Not implemented yet" << endl;
+	//cout << "Not implemented yet" << endl;
+	int n = input.size();
+	for(int i = 0; i < n - 1; i++){
+		for(int j = 0; j < n - i - 1; j++){
+			if(input[j] > input[j+1])
+				swap(input[j], input[j+1]);
+		}
+	}
 }

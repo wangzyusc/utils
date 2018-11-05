@@ -10,10 +10,10 @@ sort_test: sort .sort_test.o .sort_test
 .sort_test: sort_test.o sort.o
 	$(CXX) $(CXXFLAGS) -o sort_test sort_test.o sort.o
 
-.sort_test.o: sort_test.cpp ../src/io.hpp
+.sort_test.o: sort_test.cpp ../header/io.hpp
 	$(CXX) $(CXXFLAGS) -c -o sort_test.o sort_test.cpp
 
-sort: ../src/sort.hpp ../src/sort.cpp
+sort: ../header/sort.hpp ../src/sort.cpp
 	$(CXX) $(CXXFLAGS) -c -o sort.o ../src/sort.cpp
 
 clean:

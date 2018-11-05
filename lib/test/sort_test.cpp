@@ -1,5 +1,5 @@
-#include "../src/sort.hpp"
-#include "../src/io.hpp"
+#include "../header/sort.hpp"
+#include "../header/io.hpp"
 
 using namespace std;
 
