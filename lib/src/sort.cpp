@@ -1,4 +1,5 @@
 #include "../header/sort.hpp"
+#include "../header/data_structure.hpp"
 
 using namespace std;
 
@@ -74,11 +75,13 @@ void insertsort(vector<int>& input){
 }
 
 void heapsort(vector<int>& input){
-	cout << "Not implemented yet" << endl;
+	MaxHeap _mh(input);
+	for(int j = input.size() - 1; j >= 0; j--){
+		input[j] = _mh.popMax();
+	}
 }
 
 void bubblesort(vector<int>& input){
-	//cout << "Not implemented yet" << endl;
 	int n = input.size();
 	for(int i = 0; i < n - 1; i++){
 		for(int j = 0; j < n - i - 1; j++){

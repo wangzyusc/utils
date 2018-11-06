@@ -1,3 +1,6 @@
+#ifndef __UTILS_IO_
+#define __UTILS_IO_
+
 #include <string>
 #include <vector>
 #include <stack>
@@ -329,3 +332,5 @@ void printMap(T & _map){
     }
     cout << "}" << endl;
 }
+
+#endif
