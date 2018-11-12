@@ -169,6 +169,30 @@ void deleteLinkedList(ListNode* head){
     }
 }
 
+//DoubleLinkedList I/O
+template<typename T>
+DoubleLinkedList<T> readDoubleLinkedList(){
+	string line;
+	int num;
+	cout << "Input number elements in linked list:" << endl;
+	getline(cin, line);
+	istringstream stream(line);
+	DoubleLinkedList<T> list;
+	while(stream >> num){
+		list.append(new DoubleListNode<T>(num, NULL, NULL));
+	}
+	return list;
+}
+
+template<typename T>
+void printDoubleLinkedList(DoubleLinkedList<T>& list){
+	cout << "[";
+	for(DoubleListNode<T>* iter = list.begin(); iter != NULL; iter = iter->Next()){
+		cout << iter->value << ", ";
+	}
+	cout << "]" << endl;
+}
+
 //Integer I/O
 int readInt(){
     cout << "Input a number: ";

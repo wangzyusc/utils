@@ -43,4 +43,42 @@ private:
 	int _heap_size;
 };
 
+template<typename T>
+class DoubleListNode {
+public:
+	DoubleListNode();
+	DoubleListNode(T value, DoubleListNode<T>* prev = NULL, DoubleListNode<T>* next = NULL);
+	DoubleListNode<T>* Prev();
+	DoubleListNode<T>* Next();
+private:
+	DoubleListNode<T>* prev;
+	DoubleListNode<T>* next;
+public:
+	T value;
+};
+
+template<typename T>
+class DoubleLinkedList {
+public:
+	DoubleLinkedList();
+	void prepend(DoubleListNode<T>* ptr);
+	void append(DoubleListNode<T>* ptr);
+	void remove(DoubleListNode<T>* ptr);
+	DoubleListNode<T>* search(T& val);
+	DoubleListNode<T>* begin();
+private:
+	DoubleListNode<T> *head, *tail;
+};
+
+template<typename K, typename V>
+class HashMap {
+public:
+	HashMap();
+	V& operator[](K& key);
+private:
+	int hashFunc(K& key);
+	vector<DoubleLinkedList<pair<K, V>>> array;
+	const int _BUCKETS_NUM = 1024;
+};
+
 #endif
